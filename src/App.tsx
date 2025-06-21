@@ -7,6 +7,9 @@ import UseCallback from "./pages/UseCallback";
 import UseContext from "./pages/UseContext";
 import BasicUseContext from "./components/useContext/BasicUseContext";
 import HardUseContext from "./components/useContext/HardUseContext";
+import UseReducer from "./pages/UseReducer";
+import UseReducerOfObject from "./components/useReducer/UseReducerOfObject";
+import UseReducerOfArray from "./components/useReducer/UseReducerOfArray";
 
 function App() {
   return (
@@ -22,6 +25,10 @@ function App() {
           <Route path="/useContext" element={<UseContext />}>
             <Route path="basic" element={<BasicUseContext />} />
             <Route path="hard" element={<HardUseContext />} />
+          </Route>
+          <Route path="/useReducer" element={<UseReducer />}>
+            <Route path="object" element={<UseReducerOfObject />} />
+            <Route path="array" element={<UseReducerOfArray />} />
           </Route>
         </Routes>
       </div>
