@@ -1,20 +1,29 @@
-import NonBlock from "../components/useTransition/blocking/NonBlock";
-import Block from "../components/useTransition/blocking/Block";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function UseTransition() {
+  const location = useLocation();
+
+  const showLink = location.pathname === "/useTransition";
   return (
     <>
       <h2>UseTransition</h2>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <h4>without useTransition</h4>
-          <Block />
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <h4>with useTransition</h4>
-          <NonBlock />
-        </div>
-      </div>
+      <ul>
+        {showLink ? (
+          <>
+            <li>
+              <Link to={"blocking"}>Blocking</Link>
+            </li>
+            <li>
+              <Link to={"dashboard"}>dashboard</Link>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to={"/useTransition"}>useTransition</Link>
+          </li>
+        )}
+      </ul>
+      <Outlet />
     </>
   );
 }

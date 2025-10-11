@@ -13,6 +13,7 @@ export default function Block() {
     setIsPending(false);
     setAccount(updateAccount);
   };
+
   return (
     <div>
       <h4>Blocking</h4>
