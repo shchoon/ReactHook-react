@@ -10,6 +10,7 @@ import HardUseContext from "./components/useContext/HardUseContext";
 import UseReducer from "./pages/UseReducer";
 import UseReducerOfObject from "./components/useReducer/UseReducerOfObject";
 import UseReducerOfArray from "./components/useReducer/UseReducerOfArray";
+import UseTransition from "./pages/UseTransition";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="object" element={<UseReducerOfObject />} />
             <Route path="array" element={<UseReducerOfArray />} />
           </Route>
+          <Route path="/useTransition" element={<UseTransition />} />
         </Routes>
       </div>
     </BrowserRouter>
