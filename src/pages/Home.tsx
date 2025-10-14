@@ -19,6 +19,9 @@ export default function Home() {
         <li>
           <Link to={"/useTransition"}>useTransition</Link>
         </li>
+        <li>
+          <Link to={"/useDeferredValue"}>useDeferredValue</Link>
+        </li>
       </ul>
     </div>
   );
