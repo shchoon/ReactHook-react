@@ -1,5 +1,7 @@
-import Without from "../components/useDeferredValue/search/without";
-import With from "../components/useDeferredValue/search/with";
+import SearchByWithout from "../components/useDeferredValue/search/without";
+import SearchByWith from "../components/useDeferredValue/search/with";
+import TypingByWithout from "../components/useDeferredValue/typing/TypingByWithout";
+import TypeingByWith from "../components/useDeferredValue/typing/TypingByWith";
 
 export default function UseDeferredValue() {
   return (
@@ -7,7 +9,7 @@ export default function UseDeferredValue() {
       <h2>UseDeferredValue</h2>
       <span>각 입력창에 a 입력 → 결과보기 → b 입력</span>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h4>without useDeferredValue</h4>
           <ol>
             <li>
@@ -31,9 +33,14 @@ export default function UseDeferredValue() {
               </p>
             </li>
           </ol>
-          <Without />
+          <SearchByWithout />
+          <p>
+            아무 값이나 연속으로 입력 → text 상태 변경과 동시에 자식
+            컴포넌트들이 리렌더링 되면서 타이핑의 지연 발생
+          </p>
+          <TypingByWithout />
         </div>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h4>with useDeferredValue</h4>
           <ol>
             <li>
@@ -57,7 +64,23 @@ export default function UseDeferredValue() {
               </p>
             </li>
           </ol>
-          <With />
+          <SearchByWith />
+          <p>
+            아무 값이나 연속으로 입력 → input의 text 값은 바로 변경되지만 자식
+            컴포넌트의 prop으로 전달되는 text 는 useDeferedrValue를 통해
+            지연되어 타이핑 반응성 향상
+          </p>
+          <p>
+            주의! 자식 컴포넌트를 <strong>memo</strong>로 감싸줘야 함
+            <br />
+            <strong>
+              (text가 변경된 후 리렌더링이 되는 타이밍에 List 컴포넌트는 아직
+              이전 text 값을 가지고 있기 때문. 즉 리렌더링 시 동일한 props을
+              가지고 있는 경우 이전 props과 동일하면 리렌더링을 막을 수 있는
+              memo가 필요!)
+            </strong>
+          </p>
+          <TypeingByWith />
         </div>
       </div>
     </div>
