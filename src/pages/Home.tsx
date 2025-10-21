@@ -22,6 +22,9 @@ export default function Home() {
         <li>
           <Link to={"/useDeferredValue"}>useDeferredValue</Link>
         </li>
+        <li>
+          <Link to={"/debounce"}>Debounce</Link>
+        </li>
       </ul>
     </div>
   );
