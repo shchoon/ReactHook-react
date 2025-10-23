@@ -14,7 +14,7 @@ import UseTransition from "./pages/UseTransition";
 import Blocking from "./pages/useTransition/Blocking";
 import DashBoard from "./pages/useTransition/DashBoard";
 import UseDeferredValue from "./pages/UseDeferredValue";
-import Debounce from "./pages/Debounce";
+import SearchQuery from "./pages/SearchQuery";
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
             path="/useDeferredValue"
             element={<UseDeferredValue />}
           ></Route>
-          <Route path="/debounce" element={<Debounce />} />
+          <Route path="/debounce" element={<SearchQuery />} />
         </Routes>
       </div>
     </BrowserRouter>

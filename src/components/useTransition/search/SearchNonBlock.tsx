@@ -1,5 +1,4 @@
 import { useState, useTransition } from "react";
-import { start } from "repl";
 
 export default function SearchNonBlock({ items }: { items: string[] }) {
   const [results, setResults] = useState(items);
