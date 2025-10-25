@@ -1,6 +1,6 @@
 import SearchQueryByDebounce from "../components/search/debounce/SearchedQueryByDebounce";
-import SearchQueryByDeferredValue from "../components/search/SearchQueryByDeferredValue";
-import SearchQueryByTransition from "../components/search/SearchQueryByTransition";
+// import SearchQueryByDeferredValue from "../components/search/SearchQueryByDeferredValue";
+// import SearchQueryByTransition from "../components/search/SearchQueryByTransition";
 // import RaceCondieion from "../../public/video/raceCondition";
 
 export default function SearchQuery() {

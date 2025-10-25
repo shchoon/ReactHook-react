@@ -14,7 +14,9 @@ import UseTransition from "./pages/UseTransition";
 import Blocking from "./pages/useTransition/Blocking";
 import DashBoard from "./pages/useTransition/DashBoard";
 import UseDeferredValue from "./pages/UseDeferredValue";
-import SearchQuery from "./pages/SearchQuery";
+import Debounce from "./pages/Debounce";
+import Throttling from "./pages/Throttling";
+import Toast from "./pages/ToppingForm";
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
             path="/useDeferredValue"
             element={<UseDeferredValue />}
           ></Route>
-          <Route path="/debounce" element={<SearchQuery />} />
+          <Route path="/debounce" element={<Debounce />} />
+          <Route path="/throttling" element={<Throttling />} />
+          <Route path="/toast" element={<Toast />} />
         </Routes>
       </div>
     </BrowserRouter>
