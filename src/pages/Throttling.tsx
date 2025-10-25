@@ -38,8 +38,14 @@ import WithThrottle from "../components/throttle/WithThrottle";
 export default function Throttling() {
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <WithoutThrottle />
-      <WithThrottle />
+      <div>
+        <h4>버튼을 클릭하면 클릭한 수 만큼 토스트 생성</h4>
+        <WithoutThrottle />
+      </div>
+      <div>
+        <h4>버튼 클릭 시 1초동안 1번만 토스트 생성(by useThrottle)</h4>
+        <WithThrottle />
+      </div>
     </div>
   );
 }

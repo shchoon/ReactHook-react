@@ -31,9 +31,9 @@ export default function WithThrottle() {
       <div
         style={{
           position: "fixed",
-          top: "100px",
-          left: "50%",
-          transform: "translateX(-50%)",
+          top: "200px",
+          right: "20%",
+          transform: "translateX(20%)",
           zIndex: 9999,
           display: "flex",
           flexDirection: "column",

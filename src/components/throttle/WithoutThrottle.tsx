@@ -28,9 +28,9 @@ export default function WithoutThrottle() {
       <div
         style={{
           position: "fixed",
-          top: "100px",
-          left: "50%",
-          transform: "translateX(-50%)",
+          top: "200px",
+          left: "20%",
+          transform: "translateX(-20%)",
           zIndex: 9999,
           display: "flex",
           flexDirection: "column",
