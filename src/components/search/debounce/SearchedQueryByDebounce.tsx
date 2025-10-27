@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ResultByDebounce from "./ResultByDebounce";
 import useDebounce from "../../../hook/useDeounce";
 import { fetchSearchedQuery } from "../utils/fetchQuery";

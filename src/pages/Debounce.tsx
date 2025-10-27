@@ -1,3 +1,4 @@
+import WithDebounce from "../components/debounce/WithDebounce";
 import SearchQueryByDebounce from "../components/search/debounce/SearchedQueryByDebounce";
 // import SearchQueryByDeferredValue from "../components/search/SearchQueryByDeferredValue";
 // import SearchQueryByTransition from "../components/search/SearchQueryByTransition";
@@ -7,11 +8,12 @@ export default function SearchQuery() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <SearchQueryByDebounce />
+        <WithDebounce />
+        {/* <SearchQueryByDebounce /> */}
         {/* <SearchQueryByDeferredValue /> */}
         {/* <SearchQueryByTransition /> */}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {/* <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <div>
           <h4>디바운스를 활용한 방법</h4>
           <p>타이핑이 멈춘 후 0.5초 뒤에 검색 결과 요청</p>
@@ -35,7 +37,7 @@ export default function SearchQuery() {
             </p>
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
