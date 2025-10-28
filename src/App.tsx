@@ -17,6 +17,7 @@ import UseDeferredValue from "./pages/UseDeferredValue";
 import Debounce from "./pages/Debounce";
 import Throttling from "./pages/Throttling";
 import Toast from "./pages/ToppingForm";
+import UseActionState from "./pages/useActionState";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/debounce" element={<Debounce />} />
           <Route path="/throttling" element={<Throttling />} />
           <Route path="/toast" element={<Toast />} />
+          <Route path="/useActionState" element={<UseActionState />} />
         </Routes>
       </div>
     </BrowserRouter>

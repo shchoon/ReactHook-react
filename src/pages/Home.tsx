@@ -26,7 +26,10 @@ export default function Home() {
           <Link to={"/debounce"}>Debounce</Link>
         </li>
         <li>
-          <Link to={"throttling"}>Throttling</Link>
+          <Link to={"/throttling"}>Throttling</Link>
+        </li>
+        <li>
+          <Link to={"/useActionState"}>useActionState</Link>
         </li>
       </ul>
     </div>

@@ -1,23 +1,40 @@
 import { useCallback, useState } from "react";
 import { useDebounceForSearch } from "../../hook/useDebounceForSearch";
+import { searchQueryCache } from "../../cache/searchQueryCache";
 
 export default function WithDebounce() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<string[] | string | null>(null);
+  const cacheRef = searchQueryCache;
 
   const searchQuery = useCallback(
     async (query: string, signal: AbortSignal) => {
+      // 검색어가 없으면 실행 X
+      //   if (!query.trim()) {
+      //     return;
+      //   }
+
+      //   검색한 기록이 있으면 비동기 작업 없이 cache를 통해 결과 바로 return
+      if (cacheRef.has(query)) {
+        const cacheData = cacheRef.get(query)!;
+        setResult(cacheData);
+        return;
+      }
       try {
         const res = await fetch(
           `https://random-words-api.kushcreates.com/api?firstletter=${query}`,
           { signal }
         );
         const data: unknown = await res.json();
+        let wordsList: string[] | string | null;
         if (Array.isArray(data)) {
-          setResult(data.slice(0, 20).map((word) => word.word));
+          wordsList = data.slice(0, 20).map((word) => word.word);
         } else {
-          setResult(null);
+          wordsList = "검색 결과가 없습니다";
         }
+        setResult(wordsList);
+        // 검색결과 caching
+        cacheRef.set(query, wordsList);
       } catch (err: any) {
         if (err.name !== "AbortError") alert(err);
         setResult(null);
