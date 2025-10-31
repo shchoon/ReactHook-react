@@ -18,13 +18,17 @@ import Debounce from "./pages/Debounce";
 import Throttling from "./pages/Throttling";
 import Toast from "./pages/ToppingForm";
 import UseActionState from "./pages/useActionState";
+import UseOptimistic from "./pages/UseOptimistic";
+import ErrorBoundary from "./pages/ErrorBoundary";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
-          <header className="App-header">react Hook</header>
+          <header className="App-header">
+            <h1>react Hook</h1>
+          </header>
         </Link>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -50,6 +54,8 @@ function App() {
           <Route path="/throttling" element={<Throttling />} />
           <Route path="/toast" element={<Toast />} />
           <Route path="/useActionState" element={<UseActionState />} />
+          <Route path="/useOptimistic" element={<UseOptimistic />} />
+          <Route path="/errorBoundary" element={<ErrorBoundary />} />
         </Routes>
       </div>
     </BrowserRouter>

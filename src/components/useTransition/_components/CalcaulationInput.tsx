@@ -1,5 +1,5 @@
 type Props = {
-  action: (num: number) => void;
+  action: (num: number) => Promise<void>;
 };
 
 export default function CalculationInput({ action }: Props) {

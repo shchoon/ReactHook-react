@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { createTodos } from "../../utils";
 import { filterTodos } from "../../utils";
 
@@ -11,7 +11,8 @@ type Props = {
 const todo = createTodos();
 
 function TodoList({ todos, theme, tab }: Props) {
-  const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
+  console.log("todoList");
+  const visibleTodos = filterTodos(todos, tab);
 
   return (
     <>
@@ -19,12 +20,7 @@ function TodoList({ todos, theme, tab }: Props) {
       <p>
         theme가 변경되고 todoList가 리렌더링 될 때,
         <br />
-        todo를 필터링하는 filterTodo 함수가 useMemo로 감싸져 있어 불필요한 CPU
-        소모 ❌
-        <br />
-        <strong>
-          filter todo 함수가 무거운 작업일수록 useMemo의 효과 극대화!
-        </strong>
+        todo를 필터링하는 filterTodo 함수가 매번 실행되어 불필요한 CPU 소모
       </p>
       <ul style={{ backgroundColor: `${theme ? "black" : "white"}` }}>
         {visibleTodos.map((todo) => {
@@ -44,11 +40,11 @@ function TodoList({ todos, theme, tab }: Props) {
   );
 }
 
-export default function UseMemoCom() {
+export default function NoneUseMemo() {
   const [tab, setTab] = useState<"all" | "active" | "completed">("all");
   const [isDark, setIsDark] = useState(false);
 
-  const onChangeTab = (status: "all" | "active" | "completed") => {
+  const onChangeTab = (status: "all" | "active" | "completed") => () => {
     setTab(status);
   };
 
@@ -57,9 +53,9 @@ export default function UseMemoCom() {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div style={{ display: "flex" }}>
-        <button onClick={() => onChangeTab("all")}>all</button>
-        <button onClick={() => onChangeTab("active")}>Active</button>
-        <button onClick={() => onChangeTab("completed")}>Completed</button>
+        <button onClick={onChangeTab("all")}>all</button>
+        <button onClick={onChangeTab("active")}>Active</button>
+        <button onClick={onChangeTab("completed")}>Completed</button>
       </div>
       <label>
         <input

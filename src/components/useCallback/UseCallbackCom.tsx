@@ -6,6 +6,7 @@ export default function UseCallbackCom() {
 
   return (
     <div>
+      <h4>Theme Component</h4>
       <label>
         <input
           type="checkbox"
@@ -16,7 +17,18 @@ export default function UseCallbackCom() {
         />
         Dark Mode
       </label>
-      <hr />
+      <br />
+      <img
+        style={{ width: "30px", padding: "10px 0" }}
+        src="/down-arrow.png"
+        alt="down"
+      />
+      <p>props: theme state</p>
+      <img
+        style={{ width: "30px", padding: "10px 0" }}
+        src="/down-arrow.png"
+        alt="down"
+      />
       <UseCallbackProductPage
         theme={isDark ? "dark" : "light"}
         productId={120}

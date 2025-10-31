@@ -11,12 +11,6 @@ export default function Home() {
           <Link to={"/useCallback"}>useCallback</Link>
         </li>
         <li>
-          <Link to={"/useContext"}>useContext</Link>
-        </li>
-        <li>
-          <Link to={"/useReducer"}>useReducer</Link>
-        </li>
-        <li>
           <Link to={"/useTransition"}>useTransition</Link>
         </li>
         <li>
@@ -30,6 +24,18 @@ export default function Home() {
         </li>
         <li>
           <Link to={"/useActionState"}>useActionState</Link>
+        </li>
+        <li>
+          <Link to={"/useOptimistic"}>useOptimistic</Link>
+        </li>
+        <li>
+          <Link to={"/useContext"}>useContext</Link>
+        </li>
+        <li>
+          <Link to={"/useReducer"}>useReducer</Link>
+        </li>
+        <li>
+          <Link to={"/errorBoundary"}>ErrorBoundary</Link>
         </li>
       </ul>
     </div>

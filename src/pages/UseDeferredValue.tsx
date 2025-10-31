@@ -9,7 +9,15 @@ export default function UseDeferredValue() {
       <h2>UseDeferredValue</h2>
       <span>각 입력창에 a 입력 → 결과보기 → b 입력</span>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        {/* without useDeferredValue */}
+        <div
+          style={{
+            width: "50%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
           <h4>without useDeferredValue</h4>
           <ol>
             <li>
@@ -40,7 +48,16 @@ export default function UseDeferredValue() {
           </p>
           <TypingByWithout />
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <hr />
+        {/* with useDeferredValue */}
+        <div
+          style={{
+            width: "50%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
           <h4>with useDeferredValue</h4>
           <ol>
             <li>

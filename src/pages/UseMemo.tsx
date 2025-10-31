@@ -1,4 +1,4 @@
-import NoneUseMemo from "../components/useMemo/NoneUseMemo";
+import NoneUseMemoCom from "../components/useMemo/NoneUseMemoCom";
 import UseMemoCom from "../components/useMemo/UseMemoCom";
 
 export default function UseMemo() {
@@ -9,9 +9,28 @@ export default function UseMemo() {
       </h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         {/* not apply useMemo */}
-        <NoneUseMemo />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h3>useMemo 미적용</h3>
+          <NoneUseMemoCom />
+        </div>
+        <hr />
         {/* apply useMemo */}
-        <UseMemoCom />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h3>useMemo 적용</h3>
+          <UseMemoCom />
+        </div>
       </div>
     </div>
   );

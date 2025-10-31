@@ -51,9 +51,11 @@ export default function WithDebounce() {
     useDebounceForSearch(searchQuery, 1000);
 
   return (
-    <div>
+    <div style={{ width: "50%" }}>
       <h2>Debounce</h2>
+      <label>search: </label>
       <input
+        placeholder="알파벳을 입력해주세요"
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

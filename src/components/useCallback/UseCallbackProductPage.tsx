@@ -27,6 +27,25 @@ export default function UseCallbackProductPage({ theme, productId }: props) {
       className="theme"
       style={{ backgroundColor: `${theme === "dark" ? "gray" : "white"}` }}
     >
+      <h4>Product Component</h4>
+      <img
+        style={{ width: "30px", padding: "10px 0" }}
+        src="/down-arrow.png"
+        alt="down"
+      />
+      <p>props: form action</p>
+      <p>
+        theme가 변경되어 리렌더링될 때,
+        <br />
+        form action이 useCallback으로 감싸져 있어 form action이 새로 생성 ❌
+        <br />
+        memo로 감싸져 있는 From Component는 props이 변경되지 않아 리렌더링 ❌
+      </p>
+      <img
+        style={{ width: "30px", padding: "10px 0" }}
+        src="/down-arrow.png"
+        alt="down"
+      />
       <ShippingForm onSubmit={handleSubmit} />
     </div>
   );

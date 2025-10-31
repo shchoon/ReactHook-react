@@ -5,20 +5,24 @@ type Props = {
 };
 
 export default memo(function ShippingForm({ onSubmit }: Props) {
+  console.log("render shippingForm");
   const [count, setCount] = useState(1);
-  console.log("[ARTIFICIALLY SLOW] Rendering <ShippingForm />");
   let startTime = performance.now();
   while (performance.now() - startTime < 1000) {
     // 매우 느린 코드를 재현하기 위해 500ms동안 아무것도 하지 않습니다
   }
 
   return (
-    <form style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      <p>
-        <b>
-          Note: <code>ShippingForm</code> is artificially slowed down!
-        </b>
-      </p>
+    <form
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        alignItems: "center",
+      }}
+    >
+      <h4>Form Component</h4>
+
       <label style={{ display: "flex", gap: 5 }}>
         Number Of Items:
         <button
@@ -56,7 +60,9 @@ export default memo(function ShippingForm({ onSubmit }: Props) {
         Postal Code:
         <input placeholder="Postal Code" />
       </label>
-      <button type="submit">Order</button>
+      <button style={{ width: "200px" }} type="submit">
+        Order
+      </button>
     </form>
   );
 });
